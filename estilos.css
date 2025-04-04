@@ -1,0 +1,302 @@
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@font-face {
+    font-family: 'Titulo';
+    src: url('go3v2.ttf') format('truetype');
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.fondo {
+    background-color: #ffffff;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #ff5733;
+}
+
+/* Sección principal */
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90vh;
+    padding: 50px;
+}
+
+.texto {
+    width: 50%;
+    color: rgb(0, 0, 0);
+}
+
+.titulo {
+    font-size: 2.8em;
+    font-family: 'Titulo', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitulo {
+    font-size: 1.5em;
+    margin: 10px 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+/* Botón */
+.boton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.boton:hover {
+    background-color: #d9452d;
+}
+
+/* Redes sociales */
+.redes {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.redes a {
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.github {
+    background-color: #333;
+    color: white;
+}
+
+.github:hover {
+    background-color: #000;
+}
+
+.linkedin {
+    background-color: #0077B5;
+    color: white;
+}
+
+.linkedin:hover {
+    background-color: #005a8e;
+}
+
+.redes i {
+    font-size: 1.5em;
+}
+
+/* Imagen principal */
+.imagen {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+/* Grid principal */
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Tarjetas generales */
+.sobre-mi, .contacto, .habilidades, .proyectos {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Títulos con subrayado dinámico */
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-family: 'Titulo', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #ff5733;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+h2:hover::after {
+    transform: scaleX(1);
+}
+
+.contacto p a {
+    color: #0077B5;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.contacto p a i {
+    font-size: 1.5em;
+}
+
+.contacto p a:hover {
+    color: #ff5733;
+}
+
+
+/* Habilidades */
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.habilidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.habilidad:hover {
+    transform: scale(1.1);
+    background: #eaeaea;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Iconos de habilidades */
+.habilidad i {
+    font-size: 50px;
+    color: #ff5733;
+    transition: color 0.3s ease;
+}
+
+.habilidad:hover i {
+    color: #d9452d;
+}
+
+/* Sección de proyectos */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.proyecto {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagenes de proyectos */
+.proyecto img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover img {
+    transform: scale(1.05);
+}
